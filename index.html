@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Интерактивдуу окутуунун методдору жана ыкмалары</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .card h2 {
+      color: #2575fc;
+      font-size: 1.3em;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #333;
+      font-size: 1em;
+      line-height: 1.5;
+    }
+
+    .sparkle {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, white, transparent);
+      pointer-events: none;
+      animation: sparkle 1s linear forwards;
+    }
+
+    @keyframes sparkle {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Интерактивдүү окутуунун методдору жана ыкмалары</h1>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>1. Мээ чабуулу</h2>
+    <p>Окуучулар сунуштаган идеялар эч кандай сынга алынбастан, чектөөсүз айтылат. Бул ыкма чыгармачылыкты өнүктүрөт жана маселени чечүү жолдорун табууга жардам берет.</p>
+  </div>
+  <div class="card">
+    <h2>2. Рольдук оюндар</h2>
+    <p>Окуучулар чыныгы турмуштагы кырдаалдарга окшоштурлуп түзүлгөн жагдайларда ар кандай ролдорду аткарышат. Бул алардын эмпатиясын жана түшүнүү жөндөмүн жакшыртат.</p>
+  </div>
+  <div class="card">
+    <h2>3. Дебаттар</h2>
+    <p>Окуучулар белгилүү бир теманын оң жана терс жактарын жактап, өз ойлорун жүйөлүү далилдер менен коргошот. Бул ыкма сыни ойломду жана коомдук сүйлөө көндүмдөрүн өнүктүрөт.</p>
+  </div>
+  <div class="card">
+    <h2>4. Кейс-стади</h2>
+    <p>Негизинен чыныгы жашоодогу мисалдар негизинде окутуу болуп саналат. Окуучулар реалдуу кырдаалды талдап, өз чечимдерин сунушташат.</p>
+  </div>
+  <div class="card">
+    <h2>5. Коллективдүү ой жүгүртүү</h2>
+    <p>Окуучулар топтордо иштеп, маселени биргелешип талдап жана чечим кабыл алышат. Бул алардын кызматташуу жөндөмүн жакшыртат.</p>
+  </div>
+  <div class="card">
+    <h2>6. Визуалдык жардамдар</h2>
+    <p>Диаграммалар, схемалар, сүрөттөр жана видеолор теманы терең түшүнүүгө жардам берет. Бул көрүү аркылуу үйрөнүүнү колдойт.</p>
+  </div>
+</div>
+
+<script>
+  function createSparkle(x, y) {
+    const sparkle = document.createElement('div');
+    sparkle.className = 'sparkle';
+    sparkle.style.left = `${x}px`;
+    sparkle.style.top = `${y}px`;
+    document.body.appendChild(sparkle);
+    setTimeout(() => sparkle.remove(), 1000);
+  }
+
+  document.addEventListener('mousemove', (e) => {
+    if (Math.random() < 0.1) {
+      createSparkle(e.clientX, e.clientY);
+    }
+  });
+</script>
+
+</body>
+</html>
